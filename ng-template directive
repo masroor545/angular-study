@@ -1,0 +1,22 @@
+How ng-template works in angularJs?
+
+ng-template directive is used to create an html view using script tag. It contains "id" attribute which is used by $routeProvider to map a view with a controller.
+
+Syntax:
+
+<script type="text/ng-template" id="templateId.html">
+  <p>This is the content of the template</p>
+</script>
+
+Here, script type is type="text/ng-template" which uses id values to fetch elements and placed it in your ng-view of angularjs.
+
+You can use this id in your your app.js file as:
+
+$routeProvider.when('/view1',{
+        controller:'Controller1',
+        templateUrl:'templateId.html' // The ng-template id
+    }).when('/view2/:firstname/:lastname',{
+        controller: 'Controller2',
+        templateUrl: 'someotherID.html' // The ng-template id if any
+});
+
